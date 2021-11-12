@@ -123,10 +123,11 @@ export default function QuanLyBanner() {
 
     const DeleteBanner = async (id) => {
         await axios({
-            url: `${DOMAIN}/api/bannerManagermentController/removeBanner`,
+            url: `${DOMAIN}bannerManagerment`,
             method: 'PUT',
             data: {
-                "id": id
+                "id": id,
+                "isBanner": false
             },
             headers: {
                 Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
@@ -146,10 +147,11 @@ export default function QuanLyBanner() {
 
     const RecycleBanner = async (id) => {
         await axios({
-            url: `${DOMAIN}/api/bannerManagermentController/showBanner`,
+            url: `${DOMAIN}bannerManagerment`,
             method: 'PUT',
             data: {
-                "id": id
+                "id": id,
+                "isBanner": true
             },
             headers: {
                 Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,

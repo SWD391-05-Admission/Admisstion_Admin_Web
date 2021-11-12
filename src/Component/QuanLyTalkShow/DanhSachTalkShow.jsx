@@ -280,10 +280,11 @@ export default function DanhSachTalkShow() {
 
     const ApprovedTalkShow = async (id) => {
         await axios({
-            url: `${DOMAIN}/api/ApproveManagement/approveTalkshow`,
+            url: `${DOMAIN}approvalManagement`,
             method: 'PUT',
             data: {
-                "id": id
+                "id": id,
+                "isApprove":  true
             },
             headers: {
                 Authorization: `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
